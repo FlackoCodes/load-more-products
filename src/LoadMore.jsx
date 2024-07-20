@@ -4,6 +4,7 @@ function LoadMore() {
   const [loading, setLoading] = useState(false);
   const [products, setProducts] = useState([]);
   const [count, setcount] = useState(0);
+  const [disabledBtn, setDisabledBtn] = useState(false)
 
   async function fetchProducts() {
     try {
