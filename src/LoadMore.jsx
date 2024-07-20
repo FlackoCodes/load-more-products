@@ -9,8 +9,9 @@ function LoadMore() {
     try {
         setLoading(true)
         const res = await fetch(`https://dummyjson.com/products?limit=20&skip=${count === 0 ? 0: count * 20}`)
-        const data = await res.json()
-        console.log(data);
+        if (res && res.products && res.products.length) {
+            setProducts(res.products)
+        }
     } catch (error) {
         console.log('error fetching products', error);
     }
@@ -20,6 +21,7 @@ function LoadMore() {
     fetchProducts()
   },[])
 
+  if (loading) return <div>Loading products ... please wait</div>
   return <div className="container">LoadMore</div>;
 }
 
