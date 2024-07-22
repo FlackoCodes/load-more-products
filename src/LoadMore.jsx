@@ -19,7 +19,6 @@ function LoadMore() {
       if (results && results.products && results.products.length) {
         setProducts((prev) => [...prev, ...results.products]);
         console.log(results);
-        console.log(products);
         setDisablePrev(count === 0);
         setLoading(false);
       }
@@ -71,7 +70,7 @@ function LoadMore() {
       >
         Load More products
       </button>
-      {disablePrev ? <p>Click next btn for more</p> : null}
+      {disablePrev ? <p>Click next btn for more</p> : null} 
     </div>
   );
 }
